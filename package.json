@@ -26,11 +26,7 @@
   "engines": {
     "node": "4.3.1"
   },
-  "devDependencies": {
-    "chai": "3.5.0"
-  },
   "dependencies": {
-    "dotenv": "2.0.0",
-    "request": "2.69.0"
+    "dotenv": "2.0.0"
   }
 }
