@@ -53,3 +53,5 @@ function getImageSearchResults(searchTerm, callback, start, num) {
     });
   });
 }
+
+module.exports = getImageSearchResults;
