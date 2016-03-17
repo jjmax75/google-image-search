@@ -22,7 +22,7 @@ function getImageSearchResults(searchTerm, callback, start, num) {
     console.error('No search term');
   }
 
-  var parameters = '&q=' + searchTerm;
+  var parameters = '&q=' + encodeURIComponent(searchTerm);
   parameters += '&searchType=image';
   parameters += start ? '&start=' + start : '';
   parameters += '&num=' + num;
