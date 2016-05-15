@@ -41,16 +41,24 @@ function getImageSearchResults(searchTerm, callback, start, num) {
       result += data;
     });
 
-    response.on('end', function() {
+    response.on('end', function () {
       var data = JSON.parse(result);
       var resultsArray = [];
-
-      data.items.forEach(function(item) {
-        resultsArray.push(item);
-      });
-
-      callback(resultsArray);
+        // check for usage limits (contributed by @ryanmete)
+        // This handles the exception thrown when a user's Google CSE quota has been exceeded for the day.
+        // Google CSE returns a JSON object with a field called "error" if quota is exceed.
+      if(data.error && data.error.errors) {
+        resultsArray.push(data.error.errors[0]);
+        callback(resultsArray);
+      } else {
+        // search returned results
+        data.items.forEach(function (item) {
+          resultsArray.push(item);
+        });
+        callback(resultsArray);
+      }
     });
+
   });
 }
 
