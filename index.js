@@ -49,7 +49,7 @@ function getImageSearchResults(searchTerm, callback, start, num) {
         // Google CSE returns a JSON object with a field called "error" if quota is exceed.
       if(data.error && data.error.errors) {
         resultsArray.push(data.error.errors[0]);
-        // return the JSON formatted error message in the callback
+        // returns the JSON formatted error message in the callback
         callback(resultsArray);
       } else {
         // search returned results
