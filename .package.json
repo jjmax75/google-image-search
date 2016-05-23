@@ -1,6 +1,6 @@
 {
   "name": "node-google-image-search",
-  "version": "1.0.2",
+  "version": "1.0.1",
   "description": "A Node module to search for images using Google",
   "main": "index.js",
   "scripts": {
@@ -28,15 +28,5 @@
   },
   "dependencies": {
     "dotenv": "2.0.0"
-  },
-  "contributors": [
-    {
-      "name": "Sean Behan",
-      "url": "http://boxitoff.com"
-    },
-    {
-      "name": "Ryan Jared Mete",
-      "url": "https://github.com/ryanmete"
-    }
-  ]
+  }
 }
