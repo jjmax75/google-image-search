@@ -51,12 +51,14 @@ function getImageSearchResults(searchTerm, callback, start, num) {
         resultsArray.push(data.error.errors[0]);
         // returns the JSON formatted error message in the callback
         callback(resultsArray);
-      } else {
+      } else if(data.items) {
         // search returned results
         data.items.forEach(function (item) {
           resultsArray.push(item);
         });
         callback(resultsArray);
+      } else {
+        callback([]);
       }
     });
   });
