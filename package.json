@@ -1,6 +1,6 @@
 {
   "name": "node-google-image-search",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A Node module to search for images using Google",
   "main": "index.js",
   "scripts": {
